@@ -124,25 +124,25 @@ python3 scripts/search.py "Aboubacar Diarra" --ioai
 ### Search only IMO
 
 ```bash
-python3 scripts/search.py "Jonathan He" --imo
+python3 scripts/search.py "Aboubacar Diarra" --imo
 ```
 
 ### Search only IOI
 
 ```bash
-python3 scripts/search.py "Jonathan He" --ioi
+python3 scripts/search.py "Aboubacar Diarra" --ioi
 ```
 
 ### Search only IPhO
 
 ```bash
-python3 scripts/search.py "Jonathan He" --ipho
+python3 scripts/search.py "Aboubacar Diarra" --ipho
 ```
 
 ### Search only IChO
 
 ```bash
-python3 scripts/search.py "Jonathan He" --icho
+python3 scripts/search.py "Aboubacar Diarra" --icho
 ```
 
 ## Output
