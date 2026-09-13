@@ -27,14 +27,14 @@ class SearchEngine:
         else:
 
             requested = {
-                olympiad.upper()
+                olympiad.lower()
                 for olympiad in olympiads
             }
 
             self.scrapers = [
                 scraper_class()
                 for scraper_class in SCRAPERS
-                if scraper_class.olympiad in requested
+                if scraper_class.olympiad.lower() in requested
             ]
 
     def search(
