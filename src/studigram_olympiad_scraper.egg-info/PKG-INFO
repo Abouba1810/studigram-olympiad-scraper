@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: studigram-olympiad-scraper
+Version: 1.0.0
+Summary: Search engine for international olympiad results
+Requires-Python: >=3.10
+Requires-Dist: requests>=2.32.0
+Requires-Dist: beautifulsoup4>=4.12.0
+Requires-Dist: rapidfuzz>=3.9.0

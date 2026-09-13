@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "studigram-olympiad-scraper"
+version = "1.0.0"
+description = "Search engine for international olympiad results"
+requires-python = ">=3.10"
+
+dependencies = [
+    "requests>=2.32.0",
+    "beautifulsoup4>=4.12.0",
+    "rapidfuzz>=3.9.0",
+]
+
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
