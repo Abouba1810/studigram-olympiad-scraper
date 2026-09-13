@@ -144,16 +144,44 @@ class IMOScraper:
             ],
         )
 
+        normalized_award = self._normalize_award(
+            award
+        )
+
         return Result(
             full_name=full_name,
             country=country,
             olympiad="IMO",
             year=year,
-            medal=self._extract_medal(award),
+            medal=self._extract_medal(
+                normalized_award
+            ),
             rank=self._parse_rank(rank),
             score=self._parse_score(score),
-            award=award,
+            award=normalized_award,
             source_url=source_url,
+        )
+
+    @staticmethod
+    def _normalize_award(
+        value: str | None,
+    ) -> str | None:
+
+        if not value:
+            return None
+
+        awards = {
+            "G": "Gold",
+            "S": "Silver",
+            "B": "Bronze",
+            "HM": "Honourable Mention",
+        }
+
+        normalized = value.strip().upper()
+
+        return awards.get(
+            normalized,
+            value.strip(),
         )
 
     @staticmethod
@@ -191,7 +219,9 @@ class IMOScraper:
         return None
 
     @staticmethod
-    def _parse_rank(value: str | None):
+    def _parse_rank(
+        value: str | None,
+    ):
 
         if not value:
             return None
@@ -207,7 +237,9 @@ class IMOScraper:
         return int(match.group())
 
     @staticmethod
-    def _parse_score(value: str | None):
+    def _parse_score(
+        value: str | None,
+    ):
 
         if not value:
             return None
@@ -220,7 +252,9 @@ class IMOScraper:
             return None
 
     @staticmethod
-    def _extract_medal(value: str | None):
+    def _extract_medal(
+        value: str | None,
+    ):
 
         if not value:
             return None
